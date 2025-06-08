@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bloodbridge.controller.AwardAchievementController"
+            stylesheets="@../styles/styles.css">
+    <header>
+        <Label text="Выдать достижение" styleClass="dialog-title"/>
+    </header>
+    <content>
+        <VBox spacing="10">
+            <Label text="Выберите достижение:"/>
+            <ComboBox fx:id="achievementComboBox" prefWidth="300"/>
+            <Label fx:id="descriptionLabel" wrapText="true"/>
+        </VBox>
+    </content>
+    <buttonTypes>
+        <ButtonType text="Выдать" buttonData="OK_DONE"/>
+        <ButtonType text="Отмена" buttonData="CANCEL_CLOSE"/>
+    </buttonTypes>
+</DialogPane> 

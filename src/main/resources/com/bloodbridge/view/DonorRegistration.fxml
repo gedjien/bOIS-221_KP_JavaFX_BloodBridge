@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.DonorRegistrationController"
+            stylesheets="@../styles/main.css">
+    <VBox styleClass="registration-container" spacing="20" prefWidth="500" prefHeight="600">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Регистрация донора" styleClass="title-label"/>
+        
+        <VBox styleClass="form-section" spacing="15">
+            <Label text="ФИО:" styleClass="form-label"/>
+            <TextField fx:id="nameField" styleClass="form-control"/>
+            
+            <Label text="Email:" styleClass="form-label"/>
+            <TextField fx:id="emailField" styleClass="form-control"/>
+            
+            <Label text="Телефон:" styleClass="form-label"/>
+            <TextField fx:id="phoneField" styleClass="form-control"/>
+            
+            <Label text="Группа крови:" styleClass="form-label"/>
+            <ComboBox fx:id="bloodGroupComboBox" styleClass="form-control"/>
+            
+            <Label text="Пароль:" styleClass="form-label"/>
+            <PasswordField fx:id="passwordField" styleClass="form-control"/>
+            
+            <Label text="Подтвердите пароль:" styleClass="form-label"/>
+            <PasswordField fx:id="confirmPasswordField" styleClass="form-control"/>
+            
+            <Label text="Медицинская история:" styleClass="form-label"/>
+            <TextArea fx:id="medicalHistoryArea" prefRowCount="3" wrapText="true" styleClass="form-control"/>
+        </VBox>
+        
+        <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+            <Button text="Зарегистрироваться" onAction="#handleRegister" styleClass="primary" defaultButton="true"/>
+            <Button text="Отмена" onAction="#handleBack" styleClass="secondary" cancelButton="true"/>
+        </HBox>
+        
+        <Label fx:id="errorLabel" styleClass="error-label"/>
+    </VBox>
+</ScrollPane> 

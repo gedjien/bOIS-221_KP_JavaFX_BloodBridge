@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="donation-booking-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.DonationBookingController"
+      stylesheets="@../styles/main.css" prefWidth="600" prefHeight="500">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Запись на донацию" styleClass="title-label"/>
+    
+    <VBox styleClass="info-section" spacing="10">
+        <HBox spacing="10">
+            <Label text="Донор:" styleClass="info-label"/>
+            <Label fx:id="donorNameLabel" styleClass="info-value"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Группа крови:" styleClass="info-label"/>
+            <Label fx:id="donorBloodGroupLabel" styleClass="info-value"/>
+        </HBox>
+    </VBox>
+    
+    <VBox styleClass="date-time-section" spacing="15">
+        <Label text="Выберите дату и время донации:" styleClass="info-label"/>
+        <GridPane vgap="15" hgap="15">
+            <Label text="Дата:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="info-label"/>
+            <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            
+            <Label text="Время:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="info-label"/>
+            <ComboBox fx:id="timeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+    </VBox>
+    
+    <VBox styleClass="notes-section" spacing="10">
+        <Label text="Примечания:" styleClass="info-label"/>
+        <TextArea fx:id="notesArea" prefRowCount="3" wrapText="true"/>
+    </VBox>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Записаться" onAction="#handleBook" styleClass="primary" defaultButton="true"/>
+        <Button text="Отмена" onAction="#handleCancel" styleClass="secondary" cancelButton="true"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="medical-notes-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.MedicalNotesController"
+      stylesheets="@../styles/main.css" prefWidth="600" prefHeight="700">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Медицинские заметки" styleClass="title-label"/>
+    
+    <VBox styleClass="info-section" spacing="10">
+        <HBox spacing="10">
+            <Label text="Донор:" styleClass="info-label"/>
+            <Label fx:id="donorNameLabel" styleClass="info-value"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Группа крови:" styleClass="info-label"/>
+            <Label fx:id="donorBloodGroupLabel" styleClass="info-value"/>
+        </HBox>
+    </VBox>
+    
+    <GridPane vgap="15" hgap="15">
+        <Label text="Дата:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Label text="Давление:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="systolicPressure" promptText="Систолическое" prefWidth="100"/>
+            <Label text="/"/>
+            <TextField fx:id="diastolicPressure" promptText="Диастолическое" prefWidth="100"/>
+        </HBox>
+        
+        <Label text="Гемоглобин:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+        <TextField fx:id="hemoglobinField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <Label text="Вес:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+        <TextField fx:id="weightField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        
+        <Label text="Противопоказания:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label"/>
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <CheckBox fx:id="pregnancyCheck" text="Беременность"/>
+            <CheckBox fx:id="menstruationCheck" text="Менструация"/>
+            <CheckBox fx:id="hivCheck" text="ВИЧ"/>
+            <CheckBox fx:id="hepatitisCheck" text="Гепатит"/>
+            <CheckBox fx:id="malariaCheck" text="Малярия"/>
+            <CheckBox fx:id="tuberculosisCheck" text="Туберкулез"/>
+            <CheckBox fx:id="cancerCheck" text="Онкологические заболевания"/>
+            <CheckBox fx:id="diabetesCheck" text="Сахарный диабет"/>
+            <CheckBox fx:id="heartDiseaseCheck" text="Заболевания сердца"/>
+            <CheckBox fx:id="bloodDiseaseCheck" text="Заболевания крови"/>
+        </VBox>
+        
+        <Label text="Заметки:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="form-label"/>
+        <TextArea fx:id="notesArea" prefRowCount="5" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Сохранить" onAction="#handleSave" styleClass="primary"/>
+        <Button text="Отмена" onAction="#handleCancel" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

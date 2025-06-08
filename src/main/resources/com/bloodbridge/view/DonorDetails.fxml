@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="donor-profile-container" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.bloodbridge.controller.DonorDetailsController"
+      stylesheets="@../styles/main.css"
+      prefWidth="1200" prefHeight="800">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Информация о доноре" styleClass="title-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="printButton" onAction="#handlePrint" text="Печать" styleClass="primary"/>
+        <Button fx:id="closeButton" onAction="#handleClose" text="Закрыть" styleClass="secondary"/>
+    </HBox>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Левая колонка -->
+        <VBox spacing="20" HBox.hgrow="ALWAYS" prefWidth="600">
+            <!-- Личная информация -->
+            <TitledPane text="Личная информация" expanded="true" VBox.vgrow="NEVER">
+                <VBox spacing="10">
+                    <GridPane vgap="10" hgap="10">
+                        <Label text="ФИО:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="info-label"/>
+                        <Label fx:id="nameLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="info-value"/>
+                        
+                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="info-label"/>
+                        <Label fx:id="emailLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="info-value"/>
+                        
+                        <Label text="Телефон:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="info-label"/>
+                        <Label fx:id="phoneLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="info-value"/>
+                        
+                        <Label text="Группа крови:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="info-label"/>
+                        <Label fx:id="bloodGroupLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="info-value"/>
+                        
+                        <Label text="Статус:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="info-label"/>
+                        <Label fx:id="statusLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="info-value"/>
+                        
+                        <Label text="Последняя оценка:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="info-label"/>
+                        <Label fx:id="lastAssessmentLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="info-value"/>
+                    </GridPane>
+                </VBox>
+            </TitledPane>
+
+            <!-- Медицинская информация -->
+            <TitledPane text="Медицинская история" expanded="true" VBox.vgrow="ALWAYS">
+                <VBox spacing="10">
+                    <TextArea fx:id="medicalHistoryArea" VBox.vgrow="ALWAYS" wrapText="true" editable="false" 
+                             styleClass="text-area" prefRowCount="15" prefHeight="400"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+
+        <!-- Правая колонка -->
+        <VBox spacing="20" HBox.hgrow="ALWAYS" prefWidth="600">
+            <!-- Медицинские заметки -->
+            <TitledPane text="Медицинские заметки" expanded="true" VBox.vgrow="ALWAYS">
+                <VBox spacing="10">
+                    <TextArea fx:id="medicalNotesArea" VBox.vgrow="ALWAYS" wrapText="true" editable="false" 
+                             styleClass="text-area" prefRowCount="15" prefHeight="400"/>
+                </VBox>
+            </TitledPane>
+
+            <!-- Достижения -->
+            <TitledPane text="Достижения" expanded="true" VBox.vgrow="ALWAYS">
+                <VBox spacing="10">
+                    <ListView fx:id="achievementsList" VBox.vgrow="ALWAYS" styleClass="list-view"/>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button text="Выдать достижение" onAction="#handleAwardAchievement" styleClass="primary"/>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </HBox>
+
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+</VBox> 

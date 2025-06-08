@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="add-donation-container" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.bloodbridge.controller.AddDonationController"
+      stylesheets="@../styles/main.css"
+      prefWidth="500" prefHeight="400">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+    
+    <Label text="Запись на донацию" styleClass="title-label"/>
+    
+    <VBox styleClass="info-section" spacing="10">
+        <HBox spacing="10">
+            <Label text="Донор:" styleClass="info-label"/>
+            <Label fx:id="donorNameLabel" styleClass="info-value"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Группа крови:" styleClass="info-label"/>
+            <Label fx:id="donorBloodGroupLabel" styleClass="info-value"/>
+        </HBox>
+    </VBox>
+    
+    <GridPane vgap="15" hgap="15">
+        <Label text="Дата:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="form-control"/>
+        
+        <Label text="Время:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+        <ComboBox fx:id="timeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="form-control"/>
+        
+        <Label text="Объем крови:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+        <TextField fx:id="bloodVolumeField" promptText="мл" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="form-control"/>
+        
+        <Label text="Заметки:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+        <TextArea fx:id="notesArea" prefRowCount="3" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="text-area"/>
+    </GridPane>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Записаться" onAction="#handleSave" styleClass="primary"/>
+        <Button text="Отмена" onAction="#handleCancel" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

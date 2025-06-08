@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="donor-history-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.DonorHistoryController"
+      stylesheets="@../styles/main.css" prefWidth="600" prefHeight="500">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="История донаций" styleClass="title-label"/>
+    
+    <GridPane vgap="15" hgap="15">
+        <Label text="Донор:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+        <Label fx:id="donorNameLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="info-label"/>
+        
+        <Label text="Группа крови:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+        <Label fx:id="bloodGroupLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="info-label"/>
+    </GridPane>
+    
+    <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Дата"/>
+            <TableColumn fx:id="volumeColumn" text="Объем"/>
+            <TableColumn fx:id="statusColumn" text="Статус"/>
+            <TableColumn fx:id="notesColumn" text="Заметки"/>
+        </columns>
+    </TableView>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Закрыть" onAction="#handleClose" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

@@ -1,0 +1,467 @@
+/* Общие стили */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Заголовки */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Контейнеры */
+.staff-dashboard-container,
+.medical-notes-container,
+.donor-assessment-container,
+.admin-dashboard-container,
+.donor-details-container,
+.add-donation-container,
+.donor-history-container,
+.registration-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+    -fx-spacing: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Секции информации */
+.info-section {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.info-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Формы */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+}
+
+.form-control {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.form-control:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.2), 5, 0, 0, 0);
+}
+
+/* Кнопки */
+.button-box {
+    -fx-spacing: 10px;
+    -fx-alignment: center-right;
+}
+
+.primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+}
+
+.primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+}
+
+.secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Таблицы */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #ecf0f1;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 4px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db;
+}
+
+/* DatePicker */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 0 4px 4px 0;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* TextArea */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.text-area:focused {
+    -fx-border-color: #3498db;
+}
+
+/* TitledPane */
+.titled-pane {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: #2c3e50;
+}
+
+/* CheckBox */
+.check-box {
+    -fx-text-fill: #34495e;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+/* Сообщения об ошибках */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ScrollBar */
+.scroll-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+/* Успешные сообщения */
+.success-label {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* Формы */
+.form-section {
+    -fx-spacing: 15px;
+    -fx-padding: 10px;
+}
+
+.form-control {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.form-control:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 5, 0, 0, 0);
+}
+
+/* Кнопки */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #2472a4;
+}
+
+.button.primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.button.primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button.secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+}
+
+.button.secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Таблицы */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #e9ecef;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Метки */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Области прокрутки */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: none;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Секции с информацией */
+.info-section {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-background-radius: 6px;
+}
+
+.info-value {
+    -fx-font-size: 16px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Сообщения об ошибках и успехе */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 0;
+}
+
+.success-label {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 0;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8px;
+}
+
+.combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+/* DatePicker */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: none;
+}
+
+.date-picker .button {
+    -fx-background-color: transparent;
+    -fx-border-color: none;
+    -fx-padding: 0;
+}
+
+.date-picker .button:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Календарь */
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: white;
+}
+
+.date-picker-popup .calendar-grid .day-cell {
+    -fx-background-color: white;
+    -fx-border-color: #e9ecef;
+}
+
+.date-picker-popup .calendar-grid .day-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.date-picker-popup .calendar-grid .day-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Кнопки в контейнере */
+.button-box {
+    -fx-spacing: 10px;
+    -fx-alignment: center-right;
+    -fx-padding: 10px 0;
+}
+
+/* Текстовые области */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 5, 0, 0, 0);
+}
+
+/* Специальные стили для панели персонала */
+.staff-dashboard-container .table-view {
+    -fx-pref-height: 400px;
+}
+
+.staff-dashboard-container .button-box {
+    -fx-padding: 20px 0;
+}
+
+/* Специальные стили для медицинских заметок */
+.medical-notes-container .text-area {
+    -fx-pref-height: 200px;
+}
+
+/* Специальные стили для оценки донора */
+.donor-assessment-container .form-section {
+    -fx-padding: 20px;
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 6px;
+}
+
+/* Специальные стили для истории донора */
+.donor-history-container .table-view {
+    -fx-pref-height: 300px;
+}
+
+/* Специальные стили для панели администратора */
+.admin-dashboard-container .button-box {
+    -fx-padding: 20px 0;
+}
+
+/* Специальные стили для деталей донора */
+.donor-details-container .info-section {
+    -fx-margin: 10px 0;
+} 

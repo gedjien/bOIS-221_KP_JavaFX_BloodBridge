@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="donor-assessment-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.DonorAssessmentController"
+      stylesheets="@../styles/main.css" prefWidth="600" prefHeight="700">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Оценка донора" styleClass="title-label"/>
+    
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="15">
+            <GridPane vgap="15" hgap="15">
+                <Label text="Донор:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+                <Label fx:id="donorNameLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="info-label"/>
+                
+                <Label text="Группа крови:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+                <Label fx:id="bloodGroupLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="info-label"/>
+                
+                <Label text="Дата:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+                <DatePicker fx:id="assessmentDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="date-picker"/>
+                
+                <Label text="Время:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+                <ComboBox fx:id="timeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="combo-box"/>
+                
+                <Label text="Давление:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label"/>
+                <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <TextField fx:id="systolicField" promptText="Систолическое" styleClass="form-control"/>
+                    <Label text="/"/>
+                    <TextField fx:id="diastolicField" promptText="Диастолическое" styleClass="form-control"/>
+                </HBox>
+                
+                <Label text="Пульс:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="form-label"/>
+                <TextField fx:id="pulseField" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="form-control"/>
+                
+                <Label text="Температура:" GridPane.columnIndex="0" GridPane.rowIndex="6" styleClass="form-label"/>
+                <TextField fx:id="temperatureField" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="form-control"/>
+                
+                <Label text="Вес:" GridPane.columnIndex="0" GridPane.rowIndex="7" styleClass="form-label"/>
+                <TextField fx:id="weightField" GridPane.columnIndex="1" GridPane.rowIndex="7" styleClass="form-control"/>
+                
+                <Label text="Рост:" GridPane.columnIndex="0" GridPane.rowIndex="8" styleClass="form-label"/>
+                <TextField fx:id="heightField" GridPane.columnIndex="1" GridPane.rowIndex="8" styleClass="form-control"/>
+                
+                <Label text="Гемоглобин:" GridPane.columnIndex="0" GridPane.rowIndex="9" styleClass="form-label"/>
+                <TextField fx:id="hemoglobinField" GridPane.columnIndex="1" GridPane.rowIndex="9" styleClass="form-control"/>
+            </GridPane>
+            
+            <TitledPane text="Противопоказания" expanded="true" styleClass="titled-pane">
+                <VBox spacing="10">
+                    <CheckBox fx:id="hasFever" text="Повышенная температура" styleClass="check-box"/>
+                    <CheckBox fx:id="hasCold" text="Простуда" styleClass="check-box"/>
+                    <CheckBox fx:id="hasAllergies" text="Аллергия" styleClass="check-box"/>
+                    <CheckBox fx:id="hasMedications" text="Прием лекарств" styleClass="check-box"/>
+                    <CheckBox fx:id="hasRecentSurgery" text="Недавняя операция" styleClass="check-box"/>
+                    <CheckBox fx:id="hasPregnancy" text="Беременность" styleClass="check-box"/>
+                    <CheckBox fx:id="hasMenstruation" text="Менструация" styleClass="check-box"/>
+                    <CheckBox fx:id="hasTattoo" text="Татуировка" styleClass="check-box"/>
+                    <CheckBox fx:id="hasPiercing" text="Пирсинг" styleClass="check-box"/>
+                    <CheckBox fx:id="hasChronicDisease" text="Хроническое заболевание" styleClass="check-box"/>
+                    <CheckBox fx:id="hasInfectiousDisease" text="Инфекционное заболевание" styleClass="check-box"/>
+                    <CheckBox fx:id="hasBloodDisease" text="Заболевание крови" styleClass="check-box"/>
+                    <CheckBox fx:id="hasCardiovascularDisease" text="Сердечно-сосудистое заболевание" styleClass="check-box"/>
+                    <CheckBox fx:id="hasDiabetes" text="Сахарный диабет" styleClass="check-box"/>
+                    <CheckBox fx:id="hasCancer" text="Онкологическое заболевание" styleClass="check-box"/>
+                    <CheckBox fx:id="hasHIV" text="ВИЧ" styleClass="check-box"/>
+                    <CheckBox fx:id="hasHepatitis" text="Гепатит" styleClass="check-box"/>
+                    <CheckBox fx:id="hasSyphilis" text="Сифилис" styleClass="check-box"/>
+                    <CheckBox fx:id="hasTuberculosis" text="Туберкулез" styleClass="check-box"/>
+                </VBox>
+            </TitledPane>
+            
+            <Label text="Дополнительные заметки:" styleClass="form-label"/>
+            <TextArea fx:id="medicalNotesArea" prefRowCount="5" wrapText="true" styleClass="text-area"/>
+        </VBox>
+    </ScrollPane>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Сохранить" onAction="#handleSave" styleClass="primary"/>
+        <Button text="Отмена" onAction="#handleCancel" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 
