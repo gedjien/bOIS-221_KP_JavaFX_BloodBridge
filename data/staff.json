@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "fullName": "Иванов Иван",
+    "email": "staff@bloodbridge.com",
+    "password": "staff@bloodbridge.com",
+    "role": "Врач"
+  }
+] 

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1749146676971,
+    "donorId": 1749146575291,
+    "bookingDateTime": "2025-06-06T17:30:00",
+    "status": "SCHEDULED",
+    "notes": ""
+  },
+  {
+    "id": 1749146918366,
+    "donorId": 1749146575291,
+    "bookingDateTime": "2025-06-08T17:30:00",
+    "status": "SCHEDULED",
+    "notes": ""
+  },
+  {
+    "id": 1749147004320,
+    "donorId": 1749146575291,
+    "bookingDateTime": "2025-06-07T11:30:00",
+    "status": "SCHEDULED",
+    "notes": ""
+  },
+  {
+    "id": 1749147412236,
+    "donorId": 1749146575291,
+    "bookingDateTime": "2025-06-08T11:30:00",
+    "status": "Запланирована",
+    "notes": ""
+  },
+
+  { "id": 3000000000001, "donorId": 1000000000001, "bookingDateTime": "2024-07-01T09:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000002, "donorId": 1000000000002, "bookingDateTime": "2024-07-02T10:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000003, "donorId": 1000000000003, "bookingDateTime": "2024-07-03T11:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000004, "donorId": 1000000000004, "bookingDateTime": "2024-07-04T12:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000005, "donorId": 1000000000005, "bookingDateTime": "2024-07-05T13:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000006, "donorId": 1000000000006, "bookingDateTime": "2024-07-06T14:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000007, "donorId": 1000000000007, "bookingDateTime": "2024-07-07T15:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000008, "donorId": 1000000000008, "bookingDateTime": "2024-07-08T16:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000009, "donorId": 1000000000009, "bookingDateTime": "2024-07-09T17:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000010, "donorId": 1000000000010, "bookingDateTime": "2024-07-10T18:00:00", "status": "SCHEDULED", "notes": "" },
+  { "id": 3000000000050, "donorId": 1000000000050, "bookingDateTime": "2024-08-19T10:00:00", "status": "SCHEDULED", "notes": "Тестовая бронь 50" }
+]
