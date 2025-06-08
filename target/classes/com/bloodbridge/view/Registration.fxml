@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="registration-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.RegistrationController"
+      stylesheets="@../styles/main.css" prefWidth="500" prefHeight="600">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Регистрация" styleClass="title-label"/>
+    
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="15">
+            <GridPane vgap="15" hgap="15">
+                <Label text="ФИО:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="form-control"/>
+                
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+                <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="form-control"/>
+                
+                <Label text="Телефон:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+                <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="form-control"/>
+                
+                <Label text="Группа крови:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+                <ComboBox fx:id="bloodGroupComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="combo-box"/>
+                
+                <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label"/>
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="form-control"/>
+                
+                <Label text="Подтверждение пароля:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="form-label"/>
+                <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="form-control"/>
+            </GridPane>
+            
+            <Label text="Медицинская история:" styleClass="form-label"/>
+            <TextArea fx:id="medicalHistoryArea" prefRowCount="5" wrapText="true" styleClass="text-area"/>
+        </VBox>
+    </ScrollPane>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Зарегистрироваться" onAction="#handleRegister" styleClass="primary"/>
+        <Button text="Отмена" onAction="#handleCancel" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

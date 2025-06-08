@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bloodbridge.controller.StaffDashboardController"
+            stylesheets="@../styles/styles.css">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
+            <Label text="Панель персонала" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Выход" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <HBox spacing="20" styleClass="main-content">
+            <!-- Левая колонка - Доноры -->
+            <VBox styleClass="info-section" spacing="15" HBox.hgrow="ALWAYS">
+                <Label text="Доноры" styleClass="info-label"/>
+                <TextField fx:id="donorSearchField" promptText="Поиск доноров..." style="-fx-font-size: 14px;"/>
+                <TableView fx:id="donorsTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 14px;">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="ФИО"/>
+                        <TableColumn fx:id="emailColumn" text="Email"/>
+                        <TableColumn fx:id="phoneColumn" text="Телефон"/>
+                        <TableColumn fx:id="bloodGroupColumn" text="Группа крови"/>
+                        <TableColumn fx:id="donorStatusColumn" text="Статус"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Добавить донора" onAction="#handleAddDonor" styleClass="primary"/>
+                    <Button text="Удалить донора" onAction="#handleDeleteDonor" styleClass="danger"/>
+                    <Button text="Добавить донацию" onAction="#handleAddDonation" styleClass="primary"/>
+                    <Button text="Оценить донора" onAction="#handleDonorAssessment" styleClass="primary"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Правая колонка - Донации -->
+            <VBox styleClass="info-section" spacing="15" HBox.hgrow="ALWAYS">
+                <Label text="Донации" styleClass="info-label"/>
+                <TextField fx:id="donationSearchField" promptText="Поиск донаций..." style="-fx-font-size: 14px;"/>
+                <TableView fx:id="donationsTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 14px;">
+                    <columns>
+                        <TableColumn fx:id="donorColumn" text="Донор"/>
+                        <TableColumn fx:id="dateColumn" text="Дата"/>
+                        <TableColumn fx:id="statusColumn" text="Статус"/>
+                        <TableColumn fx:id="bloodVolumeColumn" text="Объем крови"/>
+                        <TableColumn fx:id="notesColumn" text="Заметки"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Запланировать" onAction="#handleScheduledDonation" styleClass="primary"/>
+                    <Button text="Завершить" onAction="#handleCompleteDonation" styleClass="success"/>
+                    <Button text="Отменить" onAction="#handleCancelDonation" styleClass="danger"/>
+                    <Button text="Удалить" onAction="#handleDeleteDonation" styleClass="danger"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane> 

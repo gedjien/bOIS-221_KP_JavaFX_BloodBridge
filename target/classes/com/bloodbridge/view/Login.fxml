@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="login-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.LoginController"
+      stylesheets="@../styles/main.css" prefWidth="400" prefHeight="500">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Вход в систему" styleClass="title-label"/>
+    
+    <VBox styleClass="form-section" spacing="15">
+        <Label text="Тип пользователя:" styleClass="form-label"/>
+        <ComboBox fx:id="userTypeComboBox" styleClass="form-control"/>
+        
+        <Label text="Email:" styleClass="form-label"/>
+        <TextField fx:id="emailField" styleClass="form-control"/>
+        
+        <Label text="Пароль:" styleClass="form-label"/>
+        <PasswordField fx:id="passwordField" styleClass="form-control"/>
+    </VBox>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER">
+        <Button text="Войти" onAction="#handleLogin" styleClass="primary" defaultButton="true"/>
+        <Button text="Регистрация" onAction="#handleRegister" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

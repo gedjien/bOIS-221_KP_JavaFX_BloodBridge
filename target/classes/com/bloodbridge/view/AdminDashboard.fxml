@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="admin-dashboard-container" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.bloodbridge.controller.AdminDashboardController"
+      stylesheets="@../styles/main.css" prefWidth="800" prefHeight="600">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Панель администратора" styleClass="title-label"/>
+    
+    <HBox spacing="20">
+        <VBox styleClass="info-section" spacing="15" HBox.hgrow="ALWAYS">
+            <Label text="Пользователи" styleClass="info-label"/>
+            <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="ФИО"/>
+                    <TableColumn fx:id="emailColumn" text="Email"/>
+                    <TableColumn fx:id="roleColumn" text="Роль"/>
+                    <TableColumn fx:id="statusColumn" text="Статус"/>
+                </columns>
+            </TableView>
+        </VBox>
+        
+        <VBox styleClass="info-section" spacing="15" HBox.hgrow="ALWAYS">
+            <Label text="Статистика" styleClass="info-label"/>
+            <GridPane vgap="15" hgap="15">
+                <Label text="Всего доноров:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+                <Label fx:id="totalDonorsLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="info-label"/>
+                
+                <Label text="Активных доноров:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+                <Label fx:id="activeDonorsLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="info-label"/>
+                
+                <Label text="Всего донаций:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+                <Label fx:id="totalDonationsLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="info-label"/>
+                
+                <Label text="Донаций сегодня:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+                <Label fx:id="todayDonationsLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="info-label"/>
+            </GridPane>
+        </VBox>
+    </HBox>
+    
+    <HBox styleClass="button-box" spacing="15" alignment="CENTER_RIGHT">
+        <Button text="Добавить пользователя" onAction="#handleAddUser" styleClass="primary"/>
+        <Button text="Удалить пользователя" onAction="#handleDeleteUser" styleClass="primary"/>
+        <Button text="Выход" onAction="#handleLogout" styleClass="secondary"/>
+    </HBox>
+    
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox> 

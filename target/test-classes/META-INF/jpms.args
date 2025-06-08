@@ -1,0 +1,4 @@
+--patch-module
+com.bloodbridge=_
+--add-reads
+com.bloodbridge=ALL-UNNAMED

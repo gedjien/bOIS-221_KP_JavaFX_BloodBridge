@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<DialogPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bloodbridge.controller.EditDonorController">
+    <content>
+        <VBox spacing="10" styleClass="details-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <GridPane vgap="10" hgap="10" styleClass="grid-pane">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <Label text="ФИО:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Телефон:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Группа крови:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="bloodGroupCombo" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Статус:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <ComboBox fx:id="statusCombo" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            </GridPane>
+
+            <TitledPane text="Медицинская история" expanded="true">
+                <TextArea fx:id="medicalHistoryArea" wrapText="true" prefRowCount="3"/>
+            </TitledPane>
+
+            <TitledPane text="Медицинские заметки" expanded="true">
+                <TextArea fx:id="medicalNotesArea" wrapText="true" prefRowCount="3"/>
+            </TitledPane>
+
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false"/>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Сохранить" onAction="#handleSave" styleClass="primary-button"/>
+                <Button text="Отмена" styleClass="secondary-button" ButtonBar.ButtonData.CANCEL_CLOSE="true"/>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane> 
